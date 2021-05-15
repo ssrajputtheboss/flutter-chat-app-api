@@ -327,6 +327,10 @@ app.post('/deletemsg' , async(req,res)=>{
 })
 
 // TODO: listner
-app.listen(3001, () =>{ 
-  console.log('Express server is running on localhost:3001')
+app.listen(PORT, async() =>{ 
+  console.log('\server is running')
+  var c = require('./client');
+  c.connect();
+  c.query('CREATE TABLE IF NOT EXISTS userlist(user_id SERIAL PRIMARY KEY, name VARCHAR(50) , email VARCHAR(50) ,  password VARCHAR(25))');
+  c.end();
 });
