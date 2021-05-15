@@ -1,10 +1,10 @@
 const Client = require('pg').Client;
-
+require('dotenv').config();
 const client = new Client({
   user:"postgres",
-  password:"password",
+  password:process.env.DBPASS,
   port: 5432,
-  database: "whatsappdata"
+  database: process.env.DBNAME
 });
 
 module.exports = client;
