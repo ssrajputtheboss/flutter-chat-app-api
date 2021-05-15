@@ -331,5 +331,5 @@ app.listen(PORT, async() =>{
   console.log('\server is running')
   var c = require('./client');
   c.connect();
-  await c.query('CREATE TABLE IF NOT EXISTS userlist(user_id SERIAL PRIMARY KEY, name VARCHAR(50) , email VARCHAR(50) ,  password VARCHAR(25))' , (err,d) => c.end()});
+  await c.query('CREATE TABLE IF NOT EXISTS userlist(user_id SERIAL PRIMARY KEY, name VARCHAR(50) , email VARCHAR(50) ,  password VARCHAR(25))' , (err,d) => c.end());
 });
